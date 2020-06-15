@@ -69,13 +69,13 @@ def CreateMessage(email, vid):
                   ' double entries will result in your vote being ineligible for counting, so <b>vote carefully!</b>' \
                   '</div><div>3.&nbsp;If the ID' \
                   ' doesn\'t match <i>exactly</i>, your vote won\'t be registered, so <b>Copy-Paste</b> it.</div><div>4. ' \
-                  'Read and fill the form carefully, if you face any difficulty or have a query just drop a message.</div><div><br></div><div>' \
+                  'You have 24 hrs to vote, ie. Voting ends <b>20:00 12 June 2020.</b></div><div>5. Read and fill the form carefully, if you face any difficulty or have a query just drop a message.</div><div><br></div><div>' \
                   '<font size="4">You can go and vote using this <a style="color: #21ce99; text-decoration: none" ' \
                   'href="{}"><b>link</b></a></font></div></body></html>'.format(vid, link)
-    message = MIMEText(test, 'html')
+    message = MIMEText(messagehtml, 'html')
     message['to'] = email
     message['from'] = 'Team Montage'
-    message['subject'] = 'Montage Elections Test'
+    message['subject'] = 'Montage Elections'
     return {'raw': base64.urlsafe_b64encode(message.as_bytes()).decode()}
 
 
